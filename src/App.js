@@ -1,5 +1,5 @@
-import {BrowserRouter, Switch, Route} from 'react-router-dom'
-import {Component} from 'react'
+import { Switch, Route } from 'react-router-dom'
+import { Component } from 'react'
 
 import ThemeContext from './context'
 import Navbar from './components/Navbar'
@@ -21,7 +21,7 @@ class App extends Component {
   }
 
   render() {
-    const {isDarkTheme} = this.state
+    const { isDarkTheme } = this.state
     return (
       <ThemeContext.Provider
         value={{
@@ -29,16 +29,12 @@ class App extends Component {
           toggleTheme: this.toggleTheme,
         }}
       >
-        <BrowserRouter>
-          <>
-            <Navbar />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/about" component={About} />
-              <Route component={NotFound} />
-            </Switch>
-          </>
-        </BrowserRouter>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/about" component={About} />
+          <Route component={NotFound} />
+        </Switch>
       </ThemeContext.Provider>
     )
   }
