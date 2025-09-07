@@ -1,5 +1,5 @@
-import {Component} from 'react'
-import ThemeContext from '../../context'
+import { Component } from 'react'
+import ThemeContext from '../../context/ThemeContext'
 import './index.css'
 
 class NotFound extends Component {
@@ -7,7 +7,7 @@ class NotFound extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {isDarkTheme, toggleTheme} = value
+          const { isDarkTheme, toggleTheme } = value
           const logoUrl = isDarkTheme
             ? 'https://assets.ccbp.in/frontend/react-js/website-logo-dark-theme-img.png'
             : 'https://assets.ccbp.in/frontend/react-js/website-logo-light-theme-img.png'
@@ -17,9 +17,8 @@ class NotFound extends Component {
 
           return (
             <div
-              className={`main-container ${
-                isDarkTheme ? 'dark-theme' : 'light-theme'
-              }`}
+              className={`main-container ${isDarkTheme ? 'dark-theme' : 'light-theme'
+                }`}
             >
               <img src={logoUrl} alt="website logo" />
               <button type="button" data-testid="theme" onClick={toggleTheme}>

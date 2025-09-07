@@ -1,5 +1,5 @@
-import {Component} from 'react'
-import ThemeContext from '../../context'
+import { Component } from 'react'
+import ThemeContext from '../../context/ThemeContext'
 import './index.css'
 
 class About extends Component {
@@ -12,14 +12,13 @@ class About extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {isDarkTheme} = value
+          const { isDarkTheme } = value
           const imageUrl = this.getImage(isDarkTheme)
 
           return (
             <div
-              className={`main-container ${
-                isDarkTheme ? 'dark-theme' : 'light-theme'
-              }`}
+              className={`main-container ${isDarkTheme ? 'dark-theme' : 'light-theme'
+                }`}
             >
               <img src={imageUrl} alt="about" />
               <h1>About</h1>

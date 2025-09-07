@@ -1,6 +1,6 @@
-import {Component} from 'react'
-import {Link} from 'react-router-dom'
-import ThemeContext from '../../context'
+import { Component } from 'react'
+import { Link } from 'react-router-dom'
+import ThemeContext from '../../context/ThemeContext'
 import './index.css'
 
 class Navbar extends Component {
@@ -18,15 +18,14 @@ class Navbar extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {isDarkTheme, toggleTheme} = value
+          const { isDarkTheme, toggleTheme } = value
           const logoUrl = this.getLogo(isDarkTheme)
           const themeIcon = this.getThemeIcon(isDarkTheme)
 
           return (
             <div
-              className={`main-container ${
-                isDarkTheme ? 'dark-theme' : 'light-theme'
-              }`}
+              className={`main-container ${isDarkTheme ? 'dark-theme' : 'light-theme'
+                }`}
             >
               <div className="img-container">
                 <img src={logoUrl} alt="website logo" />

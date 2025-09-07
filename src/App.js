@@ -1,7 +1,7 @@
 import { Switch, Route } from 'react-router-dom'
 import { Component } from 'react'
 
-import ThemeContext from './context'
+import ThemeContext from './context/ThemeContext'
 import Navbar from './components/Navbar'
 import Home from './components/Home'
 import About from './components/About'
